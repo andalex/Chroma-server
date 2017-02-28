@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "webpack app for pdx401",
   "scripts": {
-    "start": "eval $(cat .env) nodemon server.js",
+    "start": "nodemon server.js",
     "load-data": "eval $(cat .env) node ./models/sample-data.js",
     "test": "nodemon --exec 'mocha' test/"
   },
@@ -17,7 +17,6 @@
     "url": "https://github.com/andalex/webpack/issues"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.0",
     "body-parser": "^1.16.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
@@ -26,9 +25,10 @@
     "express": "^4.14.0",
     "mongoose": "^4.7.7",
     "morgan": "^1.7.0",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
+    "path": "^0.12.7", 
     "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "6.2.2"
   }
 }

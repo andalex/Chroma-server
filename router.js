@@ -10,9 +10,9 @@ const genCss = require('./cssgen.js');
 
 mongoose.Promise = Promise;
 
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public', 'index.html'));
-});
+// router.get('/', function(req, res, next) {
+//       next();
+// });
 
 router.get('/chroma', function(req, res, next) {
   chromaPalettes.find({}, (err, data) => {
@@ -23,7 +23,7 @@ router.get('/chroma', function(req, res, next) {
       };
       next();
   });
-
+})
   router.post('/chroma/:id', (req, res) => {
     let scss;
     if(req.query.scss == 'true') {
@@ -50,7 +50,6 @@ router.get('/chroma', function(req, res, next) {
          }); 
         }
     });
-});
 });
 
 module.exports = router;
